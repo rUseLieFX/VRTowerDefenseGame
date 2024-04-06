@@ -16,12 +16,13 @@ public class CircularDrive3 : MonoBehaviour
         grabbed = false;
     }
 
+    //SteamVR API saját eljárása - valamiért nem jelzi, hogy használva van. Kell, hogy interaktálásnál valami saját kód letudjon futni.
     private void HandHoverUpdate(Hand hand)
     {
-        if (hand == this.hand || !grabbed)
+        if (hand == this.hand || !grabbed) //Ha nincs megfogva VAGY azzal a kézzel érünk hozzá, amivel már meg lett fogva...
         {
-            GrabTypes startingGrabType = hand.GetGrabStarting();
-            bool isGrabEnding = hand.IsGrabbingWithType(grabbedWithType) == false;
+            GrabTypes startingGrabType = hand.GetGrabStarting(); //Jegyezzük meg, milyen módon van fogva.
+            bool isGrabEnding = hand.IsGrabbingWithType(grabbedWithType) == false; //Ha ugyan azt a gombot megnyomja, amivel elkezdte megfogni, akkor elakarja engedni.
 
             if (grabbedWithType == GrabTypes.None && startingGrabType != GrabTypes.None) //Ha eddig nem volt megfogva...
             {

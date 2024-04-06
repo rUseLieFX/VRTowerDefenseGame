@@ -37,6 +37,7 @@ public class VR_MinigunScript : MonoBehaviour
         {
             /*
             //Neten talált, mûködõ kód, amiatt van itt, hogy ha bármi gond lenne, lehessen mibõl segítséget szerezni.
+            //Nagy valószínûséggel újra lesz írva a Minigun kódja, mert ez jelenleg csak proof of concept-re elég - ezért van itt az eredeti kód.
             GrabTypes startingGrabType = hand.GetGrabStarting();
             Debug.Log(startingGrabType);
             bool isGrabEnding = hand.IsGrabbingWithType(grabbedWithType) == false;
@@ -92,6 +93,7 @@ public class VR_MinigunScript : MonoBehaviour
 
     }
 
+    //Ha távol visszük a kezek a hitboxtól, akkor is legyen elengedve.
     void OnHandHoverEnd(Hand hand) 
     {
         if (hand == this.hand && grabbed) Ungrab(); 

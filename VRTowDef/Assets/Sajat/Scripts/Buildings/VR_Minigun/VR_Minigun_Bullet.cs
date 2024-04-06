@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Mivel ez csak egy "particle" konkrétan, csak annyi van megadva neki hogy haladjon elõre, és ha a pálya alatt van, akkor törlõdjön.
 public class VR_Minigun_Bullet : MonoBehaviour
 {
     [SerializeField] float speed;
